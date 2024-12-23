@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .env:/app/.env
+      - /tmp/logs:/tmp/logs
+    network_mode: host
+    restart: unless-stopped
